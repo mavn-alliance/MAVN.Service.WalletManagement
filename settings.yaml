@@ -1,0 +1,95 @@
+WalletManagementService:
+    Db:
+        LogsConnString:
+            settings-key: WalletManagementService-LogsConnString
+            types:
+              - AzureTableStorage
+        MsSqlConnString:
+            settings-key: WalletManagementService-MsSqlConnString
+    RabbitMq:
+        RabbitMqConnectionString:
+            settings-key: WalletManagementRabbitMQ
+            types:
+              - RabbitMq
+        NotificationRabbitMqConnectionString:
+            settings-key: NotificationSystemRabbitMQ
+            types:
+              - RabbitMq
+    Notifications:
+      PushNotifications:
+        P2PTransferSucceededForSenderTemplateId:
+          settings-key: WalletManagementService-Notifications-PushNotifications-P2PTransferSucceededForSenderTemplateId
+        P2PTransferSucceededForReceiverTemplateId:
+          settings-key: WalletManagementService-Notifications-PushNotifications-P2PTransferSucceededForReceiverTemplateId
+        P2PTransferFailedForSenderTemplateId:
+          settings-key: WalletManagementService-Notifications-PushNotifications-P2PTransferFailedForSenderTemplateId
+        CampaignCompletedTemplateId:
+          settings-key: WalletManagementService-Notifications-PushNotifications-CampaignCompletedTemplateId
+        CampaignConditionCompletedTemplateId:
+          settings-key: WalletManagementService-Notifications-PushNotifications-CampaignConditionCompletedTemplateId
+        PartnerPaymentCreatedTemplateId:
+          settings-key: WalletManagementService-Notifications-PushNotifications-PartnerPaymentCreatedTemplateId
+        PaymentTransferAcceptedTemplateId:
+          settings-key: WalletManagementService-Notifications-PushNotifications-PaymentTransferAcceptedTemplateId
+        PaymentTransferRejectedTemplateId:
+          settings-key: WalletManagementService-Notifications-PushNotifications-PaymentTransferRejectedTemplateId
+      EmailNotifications:
+        P2PTransferSucceededForSender:
+          SubjectTemplateId:
+            settings-key: WalletManagementService-Notifications-EmailNotifications-P2PTransferSucceededForSender-SubjectTemplateId
+          MessageTemplateId:
+            settings-key: WalletManagementService-Notifications-EmailNotifications-P2PTransferSucceededForSender-MessageTemplateId
+        P2PTransferSucceededForReceiver:
+          SubjectTemplateId:
+            settings-key: WalletManagementService-Notifications-EmailNotifications-P2PTransferSucceededForReceiver-SubjectTemplateId
+          MessageTemplateId:
+            settings-key: WalletManagementService-Notifications-EmailNotifications-P2PTransferSucceededForReceiver-MessageTemplateId
+        P2PTransferFailedForSender:
+          SubjectTemplateId:
+            settings-key: WalletManagementService-Notifications-EmailNotifications-P2PTransferFailedForSender-SubjectTemplateId
+          MessageTemplateId:
+            settings-key: WalletManagementService-Notifications-EmailNotifications-P2PTransferFailedForSender-MessageTemplateId
+        PaymentTransferAccepted:
+          SubjectTemplateId:
+            settings-key: WalletManagementService-Notifications-EmailNotifications-PaymentTransferAccepted-SubjectTemplateId
+          MessageTemplateId:
+            settings-key: WalletManagementService-Notifications-EmailNotifications-PaymentTransferAccepted-MessageTemplateId
+        PaymentTransferRejected:
+          SubjectTemplateId:
+            settings-key: WalletManagementService-Notifications-EmailNotifications-PaymentTransferRejected-SubjectTemplateId
+          MessageTemplateId:
+            settings-key: WalletManagementService-Notifications-EmailNotifications-PaymentTransferRejected-MessageTemplateId
+    CustomerSupportPhoneNumber:
+      settings-key: CustomerSupportPhoneNumber
+PrivateBlockchainFacadeService:
+    ServiceUrl :
+        settings-key: PrivateBlockchainFacadeServiceUrl
+CustomerProfileService:
+    ServiceUrl:
+        settings-key: CustomerProfileServiceUrl
+PaymentTransfersService:
+    ServiceUrl :
+        settings-key: PaymentTransfersServiceUrl
+CampaignService:
+    ServiceUrl:
+        settings-key: CampaignServiceUrl
+SlackNotifications:
+    AzureQueue:
+        ConnectionString:
+            settings-key: SlackNotificationsConnString
+            types:
+                - AzureTableStorage
+        QueueName:
+            settings-key: SlackQueueName
+MonitoringServiceClient:
+    MonitoringServiceUrl:
+        settings-key: MonitoringServiceUrl
+Constants:
+    TokenSymbol:
+        settings-key: Constant-TokenSymbol
+    TokenFormatCultureInfo:
+        settings-key: Constant-TokenFormatCultureInfo
+    TokenNumberDecimalPlaces:
+        settings-key: Constant-TokenNumberDecimalPlaces
+    TokenIntegerPartFormat:
+        settings-key: Constant-TokenIntegerPartFormat
