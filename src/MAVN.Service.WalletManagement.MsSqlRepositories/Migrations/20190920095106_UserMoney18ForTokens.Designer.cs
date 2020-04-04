@@ -22,7 +22,7 @@ namespace MAVN.Service.WalletManagement.MsSqlRepositories.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Lykke.Service.WalletManagement.MsSqlRepositories.Entities.BonusIssuedEventDataEntity", b =>
+            modelBuilder.Entity("MAVN.Service.WalletManagement.MsSqlRepositories.Entities.BonusIssuedEventDataEntity", b =>
                 {
                     b.Property<Guid>("OperationId")
                         .ValueGeneratedOnAdd()
@@ -56,7 +56,7 @@ namespace MAVN.Service.WalletManagement.MsSqlRepositories.Migrations
                     b.ToTable("bonus_event_data");
                 });
 
-            modelBuilder.Entity("Lykke.Service.WalletManagement.MsSqlRepositories.Entities.TransferEventDataEntity", b =>
+            modelBuilder.Entity("MAVN.Service.WalletManagement.MsSqlRepositories.Entities.TransferEventDataEntity", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -93,7 +93,7 @@ namespace MAVN.Service.WalletManagement.MsSqlRepositories.Migrations
                     b.ToTable("transfer_event_data");
                 });
 
-            modelBuilder.Entity("Lykke.Service.WalletManagement.MsSqlRepositories.Entities.WalletFlagsEntity", b =>
+            modelBuilder.Entity("MAVN.Service.WalletManagement.MsSqlRepositories.Entities.WalletFlagsEntity", b =>
                 {
                     b.Property<string>("CustomerId")
                         .ValueGeneratedOnAdd()
