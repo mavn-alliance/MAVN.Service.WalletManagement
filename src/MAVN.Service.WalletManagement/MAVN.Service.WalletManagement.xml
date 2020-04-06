@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MAVN.Service.WalletManagement</name>
+    </assembly>
+    <members>
+        <member name="M:MAVN.Service.WalletManagement.Controllers.WalletsController.TransferBalanceAsync(MAVN.Service.WalletManagement.Client.Models.Requests.TransferBalanceRequestModel)">
+            <summary>
+            Transfers Balance from One customer to Another
+            </summary>
+            <returns><see cref="T:MAVN.Service.WalletManagement.Client.Models.Responses.TransferBalanceResponse"/></returns>
+        </member>
+        <member name="M:MAVN.Service.WalletManagement.Controllers.WalletsController.CustomerWalletBlockAsync(MAVN.Service.WalletManagement.Client.Models.Requests.CustomerWalletBlockRequest)">
+            <summary>
+            Blocks Customer's Wallet
+            </summary>
+            <param name="request" cref="T:MAVN.Service.WalletManagement.Client.Models.Requests.CustomerWalletBlockRequest">Contains information about the request</param>
+            <returns><see cref="T:MAVN.Service.WalletManagement.Client.Models.Responses.CustomerWalletBlockResponse"/></returns>
+        </member>
+        <member name="M:MAVN.Service.WalletManagement.Controllers.WalletsController.CustomerWalletUnblockAsync(MAVN.Service.WalletManagement.Client.Models.Requests.CustomerWalletUnblockRequest)">
+            <summary>
+            Unblocks Customer's Wallet
+            </summary>
+            <param name="request" cref="T:MAVN.Service.WalletManagement.Client.Models.Requests.CustomerWalletUnblockRequest">Contains information about the request</param>
+            <returns><see cref="T:MAVN.Service.WalletManagement.Client.Models.Responses.CustomerWalletUnblockResponse"/></returns>
+        </member>
+        <member name="M:MAVN.Service.WalletManagement.Controllers.WalletsController.GetCustomerWalletBlockStateAsync(System.String)">
+            <summary>
+            Gets block status of the Customer's Wallet
+            </summary>
+            <param name="customerId">Id of the Customer</param>
+            <returns><see cref="T:MAVN.Service.WalletManagement.Client.Models.Responses.CustomerWalletBlockStatusResponse"/></returns>
+        </member>
+    </members>
+</doc>

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Net;
 using System.Threading.Tasks;
 using Lykke.Common.Api.Contract.Responses;
@@ -18,7 +18,7 @@ using MAVN.Service.WalletManagement.Domain.Services;
 using MAVN.Service.WalletManagement.DomainServices;
 using Moq;
 using Xunit;
-using TransferErrorCodes = Lykke.Service.WalletManagement.Domain.Enums.TransferErrorCodes;
+using TransferErrorCodes = MAVN.Service.WalletManagement.Domain.Enums.TransferErrorCodes;
 
 namespace MAVN.Service.WalletManagement.Tests
 {
@@ -70,7 +70,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .Setup(x => x.CustomerProfiles.GetByCustomerIdAsync(It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>()))
                 .ReturnsAsync(new CustomerProfileResponse
                 {
-                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
+                    Profile = new CustomerProfile
                     {
                         Email = "test@email.com",
                     }
@@ -110,7 +110,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .Setup(x => x.CustomerProfiles.GetByCustomerIdAsync(It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>()))
                 .ReturnsAsync(new CustomerProfileResponse
                 {
-                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
+                    Profile = new CustomerProfile
                     {
                         Email = "test@email.com",
                     }
@@ -151,7 +151,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .Setup(x => x.CustomerProfiles.GetByCustomerIdAsync(It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>()))
                 .ReturnsAsync(new CustomerProfileResponse
                 {
-                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
+                    Profile = new CustomerProfile
                     {
                         Email = "test@email.com",
                     }
@@ -176,7 +176,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .Setup(x => x.CustomerProfiles.GetByCustomerIdAsync(FakeSenderCustomerId, It.IsAny<bool>(), It.IsAny<bool>()))
                 .ReturnsAsync(new CustomerProfileResponse
                 {
-                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
+                    Profile = new CustomerProfile
                     {
                         Email = "test@email.com",
                     }
@@ -266,7 +266,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .ReturnsAsync(new CustomerProfileResponse
                 {
                     ErrorCode = CustomerProfileErrorCodes.None,
-                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
+                    Profile = new CustomerProfile
                     {
                         Email = FakeSenderEmail
                     }
@@ -276,7 +276,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .ReturnsAsync(new CustomerProfileResponse
                 {
                     ErrorCode = CustomerProfileErrorCodes.None,
-                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
+                    Profile = new CustomerProfile
                     {
                         Email = FakeReceiverEmail
                     }
@@ -400,7 +400,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .ReturnsAsync(new CustomerProfileResponse
                 {
                     ErrorCode = CustomerProfileErrorCodes.None,
-                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
+                    Profile = new CustomerProfile
                     {
                         Email = FakeReceiverEmail
                     }
