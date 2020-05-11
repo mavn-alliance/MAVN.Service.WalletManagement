@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
-using Falcon.Numerics;
+using MAVN.Numerics;
 
 namespace MAVN.Service.WalletManagement.Domain.Publishers
 {
@@ -26,12 +26,5 @@ namespace MAVN.Service.WalletManagement.Domain.Publishers
             DateTime timestamp,
             Money18 currentBalance,
             string receiverEmail);
-
-        Task SendPaymentTransferAcceptedAsync(string customerId,
-            string invoiceId,
-            Money18 amount);
-
-        Task SendPaymentTransferRejectedAsync(string customerId,
-            string invoiceId);
     }
 }

@@ -1,10 +1,10 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Lykke.Common;
 using Lykke.Common.Log;
-using Falcon.Numerics;
+using MAVN.Numerics;
 using Lykke.RabbitMqBroker.Publisher;
-using Lykke.Service.NotificationSystem.SubscriberContract;
+using MAVN.Service.NotificationSystem.SubscriberContract;
 using MAVN.Service.WalletManagement.Domain.Publishers;
 using MAVN.Service.WalletManagement.Domain.Services;
 
@@ -105,32 +105,5 @@ namespace MAVN.Service.WalletManagement.DomainServices.Publishers
             });
         }
 
-        public Task PublishPaymentTransferAcceptedAsync(string customerId, string invoiceId, Money18 balance)
-        {
-            return PublishAsync(new PushNotificationEvent
-            {
-                CustomerId = customerId,
-                MessageTemplateId = _pushNotificationsSettingsService.PaymentTransferAcceptedTemplateId,
-                Source = $"{AppEnvironment.Name} - {AppEnvironment.Version}",
-                CustomPayload = new Dictionary<string, string> { { "route", "wallet" } },
-                TemplateParameters = new Dictionary<string, string>
-                {
-                    {"InvoiceId", invoiceId},
-                    { "TokensBalance", _moneyFormatter.FormatAmountToDisplayString(balance)}
-                }
-            });
-        }
-
-        public Task PublishPaymentTransferRejectedAsync(string customerId, string invoiceId)
-        {
-            return PublishAsync(new PushNotificationEvent
-            {
-                CustomerId = customerId,
-                MessageTemplateId = _pushNotificationsSettingsService.PaymentTransferRejectedTemplateId,
-                Source = $"{AppEnvironment.Name} - {AppEnvironment.Version}",
-                CustomPayload = new Dictionary<string, string> { { "route", "wallet" } },
-                TemplateParameters = new Dictionary<string, string> { { "InvoiceId", invoiceId } }
-            });
-        }
     }
 }

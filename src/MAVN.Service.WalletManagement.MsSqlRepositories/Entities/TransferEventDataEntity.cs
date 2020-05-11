@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Falcon.Numerics;
+using MAVN.Numerics;
 using MAVN.Service.WalletManagement.Domain.Models;
 
 namespace MAVN.Service.WalletManagement.MsSqlRepositories.Entities

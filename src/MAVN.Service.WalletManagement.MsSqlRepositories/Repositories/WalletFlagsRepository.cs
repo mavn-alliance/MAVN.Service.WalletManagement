@@ -1,6 +1,6 @@
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Threading.Tasks;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.WalletManagement.Domain.Models;
 using MAVN.Service.WalletManagement.Domain.Repositories;
 using MAVN.Service.WalletManagement.MsSqlRepositories.Entities;

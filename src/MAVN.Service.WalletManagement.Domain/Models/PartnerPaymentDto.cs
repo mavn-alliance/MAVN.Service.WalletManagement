@@ -1,5 +1,5 @@
 using System;
-using Falcon.Numerics;
+using MAVN.Numerics;
 using MAVN.Service.WalletManagement.Domain.Enums;
 
 namespace MAVN.Service.WalletManagement.Domain.Models

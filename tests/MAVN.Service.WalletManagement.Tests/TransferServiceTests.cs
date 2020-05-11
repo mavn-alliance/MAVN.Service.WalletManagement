@@ -5,11 +5,11 @@ using Lykke.Common.Api.Contract.Responses;
 using Lykke.Common.ApiLibrary.Exceptions;
 using Lykke.Logs;
 using Lykke.RabbitMqBroker.Publisher;
-using Lykke.Service.CustomerProfile.Client;
-using Lykke.Service.CustomerProfile.Client.Models.Enums;
-using Lykke.Service.CustomerProfile.Client.Models.Responses;
-using Lykke.Service.PrivateBlockchainFacade.Client;
-using Lykke.Service.PrivateBlockchainFacade.Client.Models;
+using MAVN.Service.CustomerProfile.Client;
+using MAVN.Service.CustomerProfile.Client.Models.Enums;
+using MAVN.Service.CustomerProfile.Client.Models.Responses;
+using MAVN.Service.PrivateBlockchainFacade.Client;
+using MAVN.Service.PrivateBlockchainFacade.Client.Models;
 using MAVN.Service.WalletManagement.Contract.Events;
 using MAVN.Service.WalletManagement.Domain;
 using MAVN.Service.WalletManagement.Domain.Models;
@@ -70,7 +70,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .Setup(x => x.CustomerProfiles.GetByCustomerIdAsync(It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>()))
                 .ReturnsAsync(new CustomerProfileResponse
                 {
-                    Profile = new CustomerProfile
+                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
                     {
                         Email = "test@email.com",
                     }
@@ -110,7 +110,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .Setup(x => x.CustomerProfiles.GetByCustomerIdAsync(It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>()))
                 .ReturnsAsync(new CustomerProfileResponse
                 {
-                    Profile = new CustomerProfile
+                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
                     {
                         Email = "test@email.com",
                     }
@@ -151,7 +151,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .Setup(x => x.CustomerProfiles.GetByCustomerIdAsync(It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>()))
                 .ReturnsAsync(new CustomerProfileResponse
                 {
-                    Profile = new CustomerProfile
+                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
                     {
                         Email = "test@email.com",
                     }
@@ -176,7 +176,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .Setup(x => x.CustomerProfiles.GetByCustomerIdAsync(FakeSenderCustomerId, It.IsAny<bool>(), It.IsAny<bool>()))
                 .ReturnsAsync(new CustomerProfileResponse
                 {
-                    Profile = new CustomerProfile
+                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
                     {
                         Email = "test@email.com",
                     }
@@ -266,7 +266,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .ReturnsAsync(new CustomerProfileResponse
                 {
                     ErrorCode = CustomerProfileErrorCodes.None,
-                    Profile = new CustomerProfile
+                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
                     {
                         Email = FakeSenderEmail
                     }
@@ -276,7 +276,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .ReturnsAsync(new CustomerProfileResponse
                 {
                     ErrorCode = CustomerProfileErrorCodes.None,
-                    Profile = new CustomerProfile
+                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
                     {
                         Email = FakeReceiverEmail
                     }
@@ -400,7 +400,7 @@ namespace MAVN.Service.WalletManagement.Tests
                 .ReturnsAsync(new CustomerProfileResponse
                 {
                     ErrorCode = CustomerProfileErrorCodes.None,
-                    Profile = new CustomerProfile
+                    Profile = new CustomerProfile.Client.Models.Responses.CustomerProfile
                     {
                         Email = FakeReceiverEmail
                     }

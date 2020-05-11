@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common;
 using Lykke.Common.Log;
 using Lykke.RabbitMqBroker;
 using Lykke.RabbitMqBroker.Subscriber;
-using Lykke.Service.BonusEngine.Contract.Events;
+using MAVN.Service.BonusEngine.Contract.Events;
 using MAVN.Service.WalletManagement.Domain.Models;
 using MAVN.Service.WalletManagement.Domain.Services;
 

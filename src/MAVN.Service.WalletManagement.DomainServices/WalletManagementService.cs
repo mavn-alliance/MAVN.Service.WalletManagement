@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Lykke.RabbitMqBroker.Publisher;
-using Lykke.Service.CustomerProfile.Client;
-using Lykke.Service.CustomerProfile.Client.Models.Enums;
+using MAVN.Service.CustomerProfile.Client;
+using MAVN.Service.CustomerProfile.Client.Models.Enums;
 using MAVN.Service.WalletManagement.Contract.Events;
 using MAVN.Service.WalletManagement.Domain.Enums;
 using MAVN.Service.WalletManagement.Domain.Repositories;

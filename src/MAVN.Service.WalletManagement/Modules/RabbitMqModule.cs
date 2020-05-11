@@ -1,10 +1,10 @@
-using Autofac;
+﻿using Autofac;
 using Common;
 using JetBrains.Annotations;
 using Lykke.Common;
 using Lykke.RabbitMqBroker.Publisher;
 using Lykke.RabbitMqBroker.Subscriber;
-using Lykke.Service.PartnersPayments.Contract;
+using MAVN.Service.PartnersPayments.Contract;
 using MAVN.Service.WalletManagement.Contract.Events;
 using MAVN.Service.WalletManagement.Domain.Publishers;
 using MAVN.Service.WalletManagement.DomainServices.Publishers;
@@ -21,7 +21,6 @@ namespace MAVN.Service.WalletManagement.Modules
         private const string TransferBalanceExchange = "lykke.wallet.transfer";
         private const string BonusDetectedExchange = "lykke.wallet.bonusrewarddetected";
         private const string P2PTransferDetectedExchange = "lykke.wallet.p2ptransferdetected";
-        private const string PaymentTransferProcessedExchange = "lykke.wallet.transferprocessed";
         private const string SuccessfulPaymentTransferExchange = "lykke.wallet.successfulpaymenttransfer";
         private const string NotificationSystemEmailExchangeName = "lykke.notificationsystem.command.emailmessage";
         private const string NotificationSystemPushNotificationsExchangeName = "notificationsystem.command.pushnotification";
@@ -138,13 +137,6 @@ namespace MAVN.Service.WalletManagement.Modules
                 .SingleInstance()
                 .WithParameter("connectionString", connString)
                 .WithParameter("exchangeName", P2PTransferDetectedExchange)
-                .WithParameter("queueName", "walletmanagement");
-
-            builder.RegisterType<PaymentTransferProcessedSubscriber>()
-                .As<IStartStop>()
-                .SingleInstance()
-                .WithParameter("connectionString", connString)
-                .WithParameter("exchangeName", PaymentTransferProcessedExchange)
                 .WithParameter("queueName", "walletmanagement");
 
             builder.RegisterType<PartnerPaymentRequestCreatedSubscriber>()

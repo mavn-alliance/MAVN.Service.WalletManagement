@@ -1,4 +1,4 @@
-using System.Net;
+﻿using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
 using Lykke.Common.Api.Contract.Responses;
@@ -21,7 +21,6 @@ namespace MAVN.Service.WalletManagement.Controllers
 
         public WalletsController(
             ITransferService transferService,
-            IPaymentTransfersService paymentTransfersService,
             IWalletManagementService walletManagementService,
             IMapper mapper)
         {

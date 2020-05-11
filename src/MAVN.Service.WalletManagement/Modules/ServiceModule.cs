@@ -1,10 +1,9 @@
-using Autofac;
+﻿using Autofac;
 using JetBrains.Annotations;
 using Lykke.Sdk;
-using Lykke.Service.Campaign.Client;
-using Lykke.Service.CustomerProfile.Client;
-using Lykke.Service.PaymentTransfers.Client;
-using Lykke.Service.PrivateBlockchainFacade.Client;
+using MAVN.Service.Campaign.Client;
+using MAVN.Service.CustomerProfile.Client;
+using MAVN.Service.PrivateBlockchainFacade.Client;
 using MAVN.Service.WalletManagement.Domain.Services;
 using MAVN.Service.WalletManagement.DomainServices;
 using MAVN.Service.WalletManagement.Services;
@@ -50,12 +49,6 @@ namespace MAVN.Service.WalletManagement.Modules
 
             builder.RegisterPrivateBlockchainFacadeClient(_appSettings.CurrentValue.PrivateBlockchainFacadeService, null);
 
-            builder.RegisterPaymentTransfersClient(_appSettings.CurrentValue.PaymentTransfersService, null);
-
-            builder.RegisterType<PaymentTransfersService>()
-                .As<IPaymentTransfersService>()
-                .SingleInstance();
-
             builder.RegisterCampaignClient(_appSettings.CurrentValue.CampaignService, null);
 
             builder.RegisterType<PartnersPaymentsService>()
@@ -80,12 +73,6 @@ namespace MAVN.Service.WalletManagement.Modules
                 .WithParameter("partnerPaymentCreatedTemplateId",
                     _appSettings.CurrentValue.WalletManagementService.Notifications.PushNotifications
                         .PartnerPaymentCreatedTemplateId)
-                .WithParameter("paymentTransferAcceptedTemplateId",
-                    _appSettings.CurrentValue.WalletManagementService.Notifications.PushNotifications
-                        .PaymentTransferAcceptedTemplateId)
-                .WithParameter("paymentTransferRejectedTemplateId",
-                    _appSettings.CurrentValue.WalletManagementService.Notifications.PushNotifications
-                        .PaymentTransferRejectedTemplateId)
                 .As<IPushNotificationsSettingsService>()
                 .SingleInstance();
 
@@ -99,12 +86,6 @@ namespace MAVN.Service.WalletManagement.Modules
                 .WithParameter("p2PFailureForSenderTemplateSettings",
                     _appSettings.CurrentValue.WalletManagementService.Notifications.EmailNotifications
                         .P2PTransferFailedForSender)
-                .WithParameter("paymentTransferAcceptedTemplateSettings",
-                    _appSettings.CurrentValue.WalletManagementService.Notifications.EmailNotifications
-                        .PaymentTransferAccepted)
-                .WithParameter("paymentTransferRejectedTemplateSettings",
-                    _appSettings.CurrentValue.WalletManagementService.Notifications.EmailNotifications
-                        .PaymentTransferRejected)
                 .As<IEmailNotificationsSettingsService>()
                 .SingleInstance();
 
