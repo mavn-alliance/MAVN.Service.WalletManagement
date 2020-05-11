@@ -1,4 +1,4 @@
-namespace MAVN.Service.WalletManagement.Settings.Notifications.PushNotifications
+﻿namespace MAVN.Service.WalletManagement.Settings.Notifications.PushNotifications
 {
     public class PushNotificationsSettings
     {
@@ -8,7 +8,5 @@ namespace MAVN.Service.WalletManagement.Settings.Notifications.PushNotifications
         public string CampaignCompletedTemplateId { get; set; }
         public string CampaignConditionCompletedTemplateId { get; set; }
         public string PartnerPaymentCreatedTemplateId { get; set; }
-        public string PaymentTransferAcceptedTemplateId { get; set; }
-        public string PaymentTransferRejectedTemplateId { get; set; }
     }
 }

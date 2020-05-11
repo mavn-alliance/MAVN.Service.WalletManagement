@@ -1,5 +1,5 @@
-using System.Data.Common;
-using Lykke.Common.MsSql;
+﻿using System.Data.Common;
+using MAVN.Common.MsSql;
 using MAVN.Service.WalletManagement.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
 

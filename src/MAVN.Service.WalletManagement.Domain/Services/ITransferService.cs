@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using Falcon.Numerics;
+using MAVN.Numerics;
 using MAVN.Service.WalletManagement.Domain.Models;
 
 namespace MAVN.Service.WalletManagement.Domain.Services

@@ -1,4 +1,4 @@
-using MAVN.Service.WalletManagement.Domain.Models;
+﻿using MAVN.Service.WalletManagement.Domain.Models;
 
 namespace MAVN.Service.WalletManagement.Domain.Services
 {
@@ -9,9 +9,5 @@ namespace MAVN.Service.WalletManagement.Domain.Services
         EmailTemplateSettings P2PSuccessForReceiverTemplateSettings { get; }
 
         EmailTemplateSettings P2PFailureForSenderTemplateSettings { get; }
-
-        EmailTemplateSettings PaymentTransferAcceptedTemplateSettings { get; }
-
-        EmailTemplateSettings PaymentTransferRejectedTemplateSettings { get; }
     }
 }

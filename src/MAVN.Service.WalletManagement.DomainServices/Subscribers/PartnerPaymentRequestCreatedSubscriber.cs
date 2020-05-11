@@ -1,8 +1,8 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
 using Lykke.RabbitMqBroker.Subscriber;
-using Lykke.Service.PartnersPayments.Contract;
+using MAVN.Service.PartnersPayments.Contract;
 using MAVN.Service.WalletManagement.Domain.Services;
 
 namespace MAVN.Service.WalletManagement.DomainServices.Subscribers

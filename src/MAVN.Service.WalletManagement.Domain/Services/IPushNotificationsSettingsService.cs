@@ -1,4 +1,4 @@
-namespace MAVN.Service.WalletManagement.Domain.Services
+﻿namespace MAVN.Service.WalletManagement.Domain.Services
 {
     public interface IPushNotificationsSettingsService
     {
@@ -13,9 +13,5 @@ namespace MAVN.Service.WalletManagement.Domain.Services
         string CampaignConditionCompletedTemplateId { get; }
 
         string PartnerPaymentCreatedTemplateId { get; }
-
-        string PaymentTransferAcceptedTemplateId { get; }
-
-        string PaymentTransferRejectedTemplateId { get; }
     }
 }

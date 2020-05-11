@@ -1,8 +1,8 @@
-using Falcon.Numerics;
+﻿using MAVN.Numerics;
 using Lykke.Common;
 using Lykke.Common.Log;
 using Lykke.RabbitMqBroker.Publisher;
-using Lykke.Service.NotificationSystem.SubscriberContract;
+using MAVN.Service.NotificationSystem.SubscriberContract;
 using MAVN.Service.WalletManagement.Domain.Publishers;
 using MAVN.Service.WalletManagement.Domain.Services;
 using System;
@@ -101,38 +101,6 @@ namespace MAVN.Service.WalletManagement.DomainServices.Publishers
                     {"Amount", _moneyFormatter.FormatAmountToDisplayString(amount) },
                     {"Timestamp", timestamp.ToString(CultureInfo.InvariantCulture) },
                     {"CurrentBalance", _moneyFormatter.FormatAmountToDisplayString(currentBalance)}
-                }
-            });
-        }
-
-        public Task SendPaymentTransferAcceptedAsync(string customerId, string invoiceId, Money18 amount)
-        {
-            return PublishAsync(new EmailMessageEvent
-            {
-                CustomerId = customerId,
-                MessageTemplateId = _emailNotificationsSettingsService.PaymentTransferAcceptedTemplateSettings.MessageTemplateId,
-                SubjectTemplateId = _emailNotificationsSettingsService.PaymentTransferAcceptedTemplateSettings.SubjectTemplateId,
-                Source = $"{AppEnvironment.Name} - {AppEnvironment.Version}",
-                TemplateParameters = new Dictionary<string, string>
-                {
-                    {"InvoiceId", invoiceId},
-                    {"TokensBalance", _moneyFormatter.FormatAmountToDisplayString(amount)}
-                }
-            });
-        }
-
-        public Task SendPaymentTransferRejectedAsync(string customerId, string invoiceId)
-        {
-            return PublishAsync(new EmailMessageEvent
-            {
-                CustomerId = customerId,
-                MessageTemplateId = _emailNotificationsSettingsService.PaymentTransferRejectedTemplateSettings.MessageTemplateId,
-                SubjectTemplateId = _emailNotificationsSettingsService.PaymentTransferRejectedTemplateSettings.SubjectTemplateId,
-                Source = $"{AppEnvironment.Name} - {AppEnvironment.Version}",
-                TemplateParameters = new Dictionary<string, string>
-                {
-                    {"InvoiceId", invoiceId},
-                    {"SupportPhoneNumber", _customerSupportNumber}
                 }
             });
         }

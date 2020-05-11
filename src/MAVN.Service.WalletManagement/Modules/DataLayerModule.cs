@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using Autofac;
 using JetBrains.Annotations;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.WalletManagement.Domain;
 using MAVN.Service.WalletManagement.Domain.Repositories;
 using MAVN.Service.WalletManagement.MsSqlRepositories;

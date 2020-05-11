@@ -1,5 +1,5 @@
-using System.Threading.Tasks;
-using Falcon.Numerics;
+﻿using System.Threading.Tasks;
+using MAVN.Numerics;
 
 namespace MAVN.Service.WalletManagement.Domain.Publishers
 {
@@ -16,9 +16,5 @@ namespace MAVN.Service.WalletManagement.Domain.Publishers
         Task PublishCampaignConditionCompletedAsync(string customerId, Money18 amount, string campaignName,
             string conditionName);
         Task PublishPartnerPaymentCreatedAsync(string customerId, string paymentRequestId);
-
-        Task PublishPaymentTransferAcceptedAsync(string customerId, string invoiceId, Money18 balance);
-
-        Task PublishPaymentTransferRejectedAsync(string customerId, string invoiceId);
     }
 }
