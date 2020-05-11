@@ -1,4 +1,4 @@
-using MAVN.Service.WalletManagement.Domain.Services;
+﻿using MAVN.Service.WalletManagement.Domain.Services;
 
 namespace MAVN.Service.WalletManagement.DomainServices
 {
@@ -9,9 +9,7 @@ namespace MAVN.Service.WalletManagement.DomainServices
             string p2PTransferFailedForSenderTemplateId,
             string campaignCompletedTemplateId, 
             string campaignConditionCompletedTemplateId,
-            string partnerPaymentCreatedTemplateId, 
-            string paymentTransferAcceptedTemplateId,
-            string paymentTransferRejectedTemplateId)
+            string partnerPaymentCreatedTemplateId)
         {
             P2PTransferSucceededForSenderTemplateId = p2PTransferSucceededForSenderTemplateId;
             P2PTransferSucceededForReceiverTemplateId = p2PTransferSucceededForReceiverTemplateId;
@@ -19,8 +17,6 @@ namespace MAVN.Service.WalletManagement.DomainServices
             CampaignCompletedTemplateId = campaignCompletedTemplateId;
             CampaignConditionCompletedTemplateId = campaignConditionCompletedTemplateId;
             PartnerPaymentCreatedTemplateId = partnerPaymentCreatedTemplateId;
-            PaymentTransferAcceptedTemplateId = paymentTransferAcceptedTemplateId;
-            PaymentTransferRejectedTemplateId = paymentTransferRejectedTemplateId;
         }
 
         public string P2PTransferSucceededForSenderTemplateId { get; }
@@ -29,7 +25,5 @@ namespace MAVN.Service.WalletManagement.DomainServices
         public string CampaignCompletedTemplateId { get; }
         public string CampaignConditionCompletedTemplateId { get; }
         public string PartnerPaymentCreatedTemplateId { get; }
-        public string PaymentTransferAcceptedTemplateId { get; }
-        public string PaymentTransferRejectedTemplateId { get; }
     }
 }

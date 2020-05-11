@@ -21,13 +21,11 @@ namespace MAVN.Service.WalletManagement.Modules
         private const string TransferBalanceExchange = "lykke.wallet.transfer";
         private const string BonusDetectedExchange = "lykke.wallet.bonusrewarddetected";
         private const string P2PTransferDetectedExchange = "lykke.wallet.p2ptransferdetected";
-        private const string SuccessfulPaymentTransferExchange = "lykke.wallet.successfulpaymenttransfer";
         private const string NotificationSystemEmailExchangeName = "lykke.notificationsystem.command.emailmessage";
         private const string NotificationSystemPushNotificationsExchangeName = "notificationsystem.command.pushnotification";
         private const string P2PTransferFailedExchangeName = "lykke.wallet.p2ptransferfailed";
         private const string PartnerPaymentRequestCreatedExchangeName = "lykke.wallet.partnerpaymentrequestcreated";
         private const string PartnerPaymentProcessedExchangeName = "lykke.wallet.partnerspaymentprocessed";
-        private const string RefundPaymentTransferExchange = "lykke.wallet.refundpaymenttransfer";
         private const string SuccessfulPartnersPaymentExchange = "lykke.wallet.successfulpartnerspayment";
         private const string RefundPartnersPaymentExchange = "lykke.wallet.refundpartnerspayment";
         private const string CustomerWalletStatusUpdatedExchange = "lykke.wallet.walletstatusupdated";
@@ -60,14 +58,6 @@ namespace MAVN.Service.WalletManagement.Modules
             builder.RegisterJsonRabbitPublisher<P2PTransferEvent>(
                 connString,
                 TransferBalanceExchange);
-
-            builder.RegisterJsonRabbitPublisher<SuccessfulPaymentTransferEvent>(
-                connString,
-                SuccessfulPaymentTransferExchange);
-
-            builder.RegisterJsonRabbitPublisher<RefundPaymentTransferEvent>(
-                connString,
-                RefundPaymentTransferExchange);
 
             builder.RegisterJsonRabbitPublisher<SuccessfulPartnersPaymentEvent>(
                 connString,

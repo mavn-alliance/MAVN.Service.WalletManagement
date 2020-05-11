@@ -29,10 +29,6 @@ WalletManagementService:
           settings-key: WalletManagementService-Notifications-PushNotifications-CampaignConditionCompletedTemplateId
         PartnerPaymentCreatedTemplateId:
           settings-key: WalletManagementService-Notifications-PushNotifications-PartnerPaymentCreatedTemplateId
-        PaymentTransferAcceptedTemplateId:
-          settings-key: WalletManagementService-Notifications-PushNotifications-PaymentTransferAcceptedTemplateId
-        PaymentTransferRejectedTemplateId:
-          settings-key: WalletManagementService-Notifications-PushNotifications-PaymentTransferRejectedTemplateId
       EmailNotifications:
         P2PTransferSucceededForSender:
           SubjectTemplateId:
