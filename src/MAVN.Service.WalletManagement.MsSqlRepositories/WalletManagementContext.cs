@@ -1,11 +1,11 @@
 ﻿using System.Data.Common;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.WalletManagement.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace MAVN.Service.WalletManagement.MsSqlRepositories
 {
-    public class WalletManagementContext : MsSqlContext
+    public class WalletManagementContext : PostgreSQLContext
     {
         private const string Schema = "wallet_management";
 
@@ -38,7 +38,7 @@ namespace MAVN.Service.WalletManagement.MsSqlRepositories
         {
         }
 
-        protected override void OnLykkeModelCreating(ModelBuilder modelBuilder)
+        protected override void OnMAVNModelCreating(ModelBuilder modelBuilder)
         {
         }
     }

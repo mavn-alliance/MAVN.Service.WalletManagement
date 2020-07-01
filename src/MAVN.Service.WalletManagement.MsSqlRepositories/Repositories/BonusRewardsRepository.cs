@@ -3,11 +3,12 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.WalletManagement.Domain.Models;
 using MAVN.Service.WalletManagement.Domain.Repositories;
 using MAVN.Service.WalletManagement.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace MAVN.Service.WalletManagement.MsSqlRepositories.Repositories
 {
@@ -16,7 +17,7 @@ namespace MAVN.Service.WalletManagement.MsSqlRepositories.Repositories
         private readonly IDbContextFactory<WalletManagementContext> _contextFactory;
         private readonly ILog _log;
 
-        public BonusRewardsRepository(MsSqlContextFactory<WalletManagementContext> contextFactory, ILogFactory logFactory)
+        public BonusRewardsRepository(PostgreSQLContextFactory<WalletManagementContext> contextFactory, ILogFactory logFactory)
         {
             _contextFactory = contextFactory;
             _log = logFactory.CreateLog(this);
@@ -36,8 +37,8 @@ namespace MAVN.Service.WalletManagement.MsSqlRepositories.Repositories
                 }
                 catch (DbUpdateException e)
                 {
-                    if (e.InnerException is SqlException sqlException
-                        && sqlException.Number == MsSqlErrorCodes.PrimaryKeyConstraintViolation)
+                    if (e.InnerException is PostgresException sqlException
+                        && sqlException.SqlState == PostgresErrorCodes.UniqueViolation)
                     {
                         _log.Warning("Error on bonus issued event context saving", e);
                     }

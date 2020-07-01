@@ -1,10 +1,10 @@
-﻿using System.Data.SqlClient;
-using System.Threading.Tasks;
-using MAVN.Common.MsSql;
+﻿using System.Threading.Tasks;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.WalletManagement.Domain.Models;
 using MAVN.Service.WalletManagement.Domain.Repositories;
 using MAVN.Service.WalletManagement.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace MAVN.Service.WalletManagement.MsSqlRepositories.Repositories
 {
@@ -13,7 +13,7 @@ namespace MAVN.Service.WalletManagement.MsSqlRepositories.Repositories
         private readonly IDbContextFactory<WalletManagementContext> _contextFactory;
 
         public WalletFlagsRepository(
-            MsSqlContextFactory<WalletManagementContext> contextFactory)
+            PostgreSQLContextFactory<WalletManagementContext> contextFactory)
         {
             _contextFactory = contextFactory;
         }
@@ -32,8 +32,8 @@ namespace MAVN.Service.WalletManagement.MsSqlRepositories.Repositories
                 }
                 catch (DbUpdateException e)
                 {
-                    if (e.InnerException is SqlException sqlException &&
-                        sqlException.Number == MsSqlErrorCodes.PrimaryKeyConstraintViolation)
+                    if (e.InnerException is PostgresException sqlException &&
+                        sqlException.SqlState == PostgresErrorCodes.UniqueViolation)
                     {
                         context.WalletFlags.Update(entity);
 
