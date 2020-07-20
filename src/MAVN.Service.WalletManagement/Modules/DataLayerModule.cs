@@ -1,13 +1,13 @@
 ﻿using System;
 using Autofac;
 using JetBrains.Annotations;
-using MAVN.Common.MsSql;
 using MAVN.Service.WalletManagement.Domain;
 using MAVN.Service.WalletManagement.Domain.Repositories;
 using MAVN.Service.WalletManagement.MsSqlRepositories;
 using MAVN.Service.WalletManagement.MsSqlRepositories.Repositories;
 using MAVN.Service.WalletManagement.Settings;
 using Lykke.SettingsReader;
+using MAVN.Persistence.PostgreSQL.Legacy;
 
 namespace MAVN.Service.WalletManagement.Modules
 {
@@ -23,7 +23,7 @@ namespace MAVN.Service.WalletManagement.Modules
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterMsSql(
+            builder.RegisterPostgreSQL(
                 _appSettings.Db.MsSqlConnString,
                 connString => new WalletManagementContext(connString, false),
                 dbConn => new WalletManagementContext(dbConn));
